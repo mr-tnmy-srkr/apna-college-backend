@@ -15,8 +15,9 @@ app.get("/roll_dice", (req, res) => {
 });
 
 app.get("/ig/:username", (req, res) => {
+  const users = ["jhon","doe","adam","eve"]
   let { username } = req.params;
-  res.render("instagram.ejs", { username });
+  res.render("instagram.ejs", { username, users });
 });
 
 app.listen(port, () => {
