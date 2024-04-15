@@ -15,9 +15,20 @@ app.get("/roll_dice", (req, res) => {
 });
 
 app.get("/ig/:username", (req, res) => {
-  const users = ["jhon","doe","adam","eve"]
+  const users = ["jhon", "doe", "adam", "eve"];
   let { username } = req.params;
   res.render("instagram.ejs", { username, users });
+});
+
+app.get("/v2/ig/:username", (req, res) => {
+  let { username } = req.params;
+  const instagramData = require("./data.json");
+  const data = instagramData[username];
+  if (data) {
+    res.render("instagram_2.ejs", { data });
+  } else {
+    res.render("error.ejs");
+  }
 });
 
 app.listen(port, () => {
