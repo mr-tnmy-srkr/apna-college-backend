@@ -3,6 +3,10 @@ const app = express();
 const port = 8080;
 const path = require("path");
 
+// app.use(express.static("public/css")); //eta dile vitor e giye access
+// app.use(express.static("public/js")); //eta dile vitor e giye access
+app.use(express.static(path.join(__dirname, "/public/css"))); //parent theke access
+app.use(express.static(path.join(__dirname, "/public/js"))); //parent theke access
 app.set("view engine", "ejs"); //template engine enable you to use static template files in applications
 app.set("views", path.join(__dirname, "/views")); //parent theke access korte parbo
 
