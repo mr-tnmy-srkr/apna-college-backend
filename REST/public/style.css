@@ -1,0 +1,12 @@
+h1{
+    color: maroon;
+}
+.post {
+    background-color: blanchedalmond;
+}
+.user{
+    font-style: italic;
+}
+.content{
+    background-color: rgba(247, 182, 84, 0.502);
+}
