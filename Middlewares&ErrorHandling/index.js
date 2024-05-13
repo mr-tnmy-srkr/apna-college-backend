@@ -36,10 +36,14 @@ app.get("/", (req, res) => res.send("Root!"));
 
 app.get("/api", checkToken, (req, res) => res.send("api data"));
 
-app.get("/random", (req, res) => res.send("randomm!"));
+app.get("/random", (req, res) => res.send("random!"));
 
 app.get("/err", (req, res) => {
   abcd = abcd;
+});
+
+app.get("/admin", (req, res) =>{
+  throw new ExpressError (403, "Access Admin to forbidden")
 });
 
 app.use((err, req, res, next) => {
